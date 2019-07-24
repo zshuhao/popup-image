@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <div class="image-box">
+        <div class="image-box" @touchstart="handelTouchStart" @touchmove="handelTouchMove" @touchend="handelTouchEnd">
             <img alt="Vue logo" src="../assets/logo.png" @click="handleImgClick">
         </div>
         <div class="image-box">
@@ -62,6 +62,15 @@ export default {
             // console.log('innerHeight', innerHeight)
             // console.log('naturalHeight', elHeight)
             // console.log('naturalWidth', elWidth)
+        },
+        handelTouchStart (e) {
+            console.log('TouchStart', e)
+        },
+        handelTouchMove (e) {
+            console.log('TouchMove', e)
+        },
+        handelTouchEnd (e) {
+            console.log('TouchEnd', e)
         }
     }
 }
